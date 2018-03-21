@@ -1,0 +1,23 @@
+import os
+import sys
+from PIL import Image
+
+def make_nine_picture(sourcePath):
+    if os.path.isfile(sourcePath):
+        im = Image.open(sourcePath)
+        if im == None:
+            print(sourcePath, "cannot open the image.")
+        width, height = im.size
+        [fname,fename]=os.path.splitext(sourcePath)
+        if not os.path.exists(fname) or not os.path.isdir(fname):
+            os.makedirs(fname)
+        newwidth = width/3
+        newheight = height/3
+        for h in range(0, 3):
+            for col in range(0, 3):
+                cropedIm = im.crop((col*newwidth, h*newheight, (col+1)*newwidth, (h+1)*newheight))
+                cropedIm.save(fname + "/" + str(h*3+col) + ".png")
+    
+if __name__ == '__main__':
+    if len(sys.argv) >= 2:
+        make_nine_picture(sys.argv[1])
