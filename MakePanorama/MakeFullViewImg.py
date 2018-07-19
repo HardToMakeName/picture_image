@@ -43,7 +43,7 @@ def GetTopUV(theta, phi):
     return u, v
 
 ## 趴在地上，右方向是+X
-def GetBottonUV(theta, phi):
+def GetDownUV(theta, phi):
     x = -math.tan(theta)*math.cos(phi)
     y = -math.tan(theta)*math.sin(phi)
     u = (1+x)/2
@@ -130,8 +130,8 @@ def GetUVAndIndex(theta, phi):
         index = TOP
         dispatchUV = GetTopUV
     elif theta > (math.pi - crisis):
-        index = BOTTOM
-        dispatchUV = GetBottonUV
+        index = DOWN
+        dispatchUV = GetDownUV
 
     u, v = dispatchUV(theta, phi)
 
