@@ -1,0 +1,14 @@
+{
+
+    "width" : 3072,
+    "height" : 1536,
+    
+    "output" :  "./target.png",
+    "top"    :  "./SummerSky/top.png",
+    "down"   :  "./SummerSky/down.png",
+    "right"  :  "./SummerSky/right.png",
+    "left"   :  "./SummerSky/left.png",
+    "front"  :  "./SummerSky/front.png",
+    "back"   :  "./SummerSky/back.png"
+
+}
